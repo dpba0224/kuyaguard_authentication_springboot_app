@@ -64,7 +64,7 @@ const Menubar = () => {
     }
 
     return(
-       <nav className="navbar bg-white px-5 py-4 d-flex justify-content-between align-items-center">
+       <nav className="navbar px-5 py-4 d-flex justify-content-between align-items-center">
             {/* Logo and App Name */}
             <div className="d-flex align-items-center gap-2">
                 <img src={assets.logo_home} alt="logo" width={32} height={32} />

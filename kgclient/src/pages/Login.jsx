@@ -47,8 +47,8 @@ const Login = () => {
     }
 
     return (
-        <div className="position-relative min-vh-100 d-flex justify-content-center align-items-center"
-            style={{background: "linear-gradient(90deg, #6a5af9, #8268f9)", border: "none"}}>
+        <div className="position-relative min-vh-100 d-flex justify-content-start align-items-center"
+            style={{background: "linear-gradient(90deg, #ACDF87, #68BB59)", border: "none"}}>
 
             <div style={{position: "absolute", top: "20px", left: "30px", display: "flex", alignItems: "center"}}>
 
@@ -60,25 +60,30 @@ const Login = () => {
                     fontSize: "24px",
                     textDecoration: "none",
                 }}>
-                    <img src={assets.logo} alt="logo" height={32} width={32} />
-                    <span className="fw-bold fs-4 text-light">Authify</span>
+                    <img src={assets.logo_home} alt="logo" height={32} width={32} />
+                    <span className="fw-bold fs-4 text-dark">Kuya Guard</span>
                 </Link>
 
             </div>
-            <div className="card p-4" style={{maxWidth: "400px", width: "100%"}}>
+
+            <div style={{position: "absolute", bottom: "40px", right: "30px", display: "flex", alignItems: "center"}}>
+                <img src={assets.login_guard02} alt="guard" height={450}/>
+            </div>
+ 
+            <div className="card p-4" style={{position: "relative",  margin: "auto", maxWidth: "450px", width: "100%", backgroundColor: "rgba(255,255,255, 0.75)"}}>
                 <h2 className="text-center mb-4">
-                    {isCreateAccount ? "Create Account" : "Login"}
+                    {isCreateAccount ? "Create Account" : "Log In"}
                 </h2>
                 <form onSubmit={onSubmitHandler}>
                     {
                         isCreateAccount && (
                             <div className="mb-3">
-                                <label htmlFor="fullName" className="form-label">Full Name</label>
+                                <label htmlFor="fullName" className="form-label">Full Name:</label>
                                 <input
                                     type="text"
                                     id="fullName"
                                     className="form-control"
-                                    placeholder="Enter fullname"
+                                    placeholder="Example: Juan Dela Cruz"
                                     required
                                     onChange={(e) => setName(e.target.value)}
                                     value={name}
@@ -87,19 +92,19 @@ const Login = () => {
                         )
                     }
                     <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email Id</label>
+                        <label htmlFor="email" className="form-label">E-mail Address:</label>
                         <input
                             type="text"
                             id="email"
                             className="form-control"
-                            placeholder="Enter email"
+                            placeholder="Example: juan.delacruz@gmail.com"
                             required
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="password" className="form-label">Password</label>
+                        <label htmlFor="password" className="form-label">Password (at least 8 characters):</label>
                         <input
                             type="password"
                             id="password"
@@ -117,7 +122,7 @@ const Login = () => {
                     </div>
 
                     <button type="submit" className="btn btn-primary w-100" disabled={loading}>
-                        {loading ? "Loading..." : isCreateAccount ? "Sign Up" : "Login"}
+                        {loading ? "Loading..." : isCreateAccount ? "Sign Up" : "Log In"}
                     </button>
                 </form>
 
@@ -147,6 +152,7 @@ const Login = () => {
                     </p>
                 </div>
             </div>
+            
         </div>
     )
 }

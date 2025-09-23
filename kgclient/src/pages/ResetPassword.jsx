@@ -105,9 +105,9 @@ const ResetPassword = () => {
     }
 
     return(
-        <div className="d-flex align-items-center justify-content-center vh-100 position-relative"
+        <div className="d-flex align-items-center justify-content-start vh-100 position-relative"
             style={{
-                background: "linear-gradient(90deg, #6a5af9, #8268f9)",
+                background: "linear-gradient(90deg, #FFA685, #F06E43)",
                 border: "none"   
             }}>
                 
@@ -115,16 +115,20 @@ const ResetPassword = () => {
                 to="/"
                 className="position-absolute top-0 start-0 p-4 d-flex align-items-center gap-2 text-decoration-none"
             >
-                <img src={assets.logo} alt="logo" height={32} width={32}/>
-                <span className="fs-4 fw-semibold text-light">Kuya Guard</span>
+                <img src={assets.logo_home} alt="logo" height={32} width={32}/>
+                <span className="fs-4 fw-semibold text-dark">Kuya Guard</span>
             </Link>
+
+            <div style={{position: "absolute", bottom: "40px", right: "30px", display: "flex", alignItems: "center"}}>
+                <img src={assets.fp_guard} alt="guard" height={500}/>
+            </div>
 
             {/* Card for resetting the password */}
             {!isEmailSent && (
                 <div className="rounded-4 p-5 text-center bg-white"
-                    style={{width: '100%', maxWidth: '400px'}}>
+                    style={{position: "relative",  margin: "auto", width: '100%', maxWidth: '450px'}}>
                         <h4 className="mb-2">Reset Password</h4>
-                        <p className="mb-4">Enter your registered e-mail address:</p>
+                        <p className="mb-4">Forgot your password? I'll help you solve this! Please enter your registered e-mail address:</p>
                         
                         <form onSubmit={onSubmitEmail}>
                             <div className="input-group mb-4 bg-secondary bg-opacity-10 rounded-pill">
@@ -151,7 +155,8 @@ const ResetPassword = () => {
 
             {/* Card for the OTP */}
             {!isOtpSubmitted && isEmailSent && (
-                <div className="p-5 rounded-4 shadow bg-white" style={{width: "400px"}}>
+                <div className="p-5 rounded-4 shadow bg-white" 
+                    style={{position: "relative",  margin: "auto", width: "100%", maxWidth: "450px"}}>
                     <h4 className="text-center fw-bold mb-2">E-mail Verify OTP</h4>
                     
                     <p className="text-center mb-4">
